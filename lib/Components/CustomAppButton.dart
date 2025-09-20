@@ -48,7 +48,7 @@ class CustomAppButton extends StatelessWidget {
         onPressed: isLoading ? null : onPlusTap,
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero,
-          backgroundColor: color??Colors.white,
+          backgroundColor: color ?? Colors.white,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius.toDouble()),
@@ -142,8 +142,8 @@ class CustomAppButton1 extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xFFF9017F), // #F9017F
-                Color(0xFF8D0180), // #8D0180
+                Color(0xFF667EEA), // #F9017F
+                Color(0xFF764BA2), // #8D0180
               ],
             ),
             borderRadius: BorderRadius.circular(borderRadius.toDouble()),
@@ -205,7 +205,8 @@ class CommonGradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(padding: EdgeInsets.symmetric(horizontal: padding ?? 16),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: padding ?? 16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: colors,

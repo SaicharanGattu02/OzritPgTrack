@@ -39,7 +39,7 @@ class Serverdown extends StatelessWidget {
                 ),
               ),
             ),
-            Image.asset("assets/images/server_error.png"),
+            Image.asset("images/images/server_error.png"),
           ],
         ),
       ),

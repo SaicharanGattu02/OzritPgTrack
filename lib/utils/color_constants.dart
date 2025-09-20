@@ -2,8 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const Color primarycolor = Color(0xFFF9017F);
-const Color primarycolor1 = Color(0xffEC4899);
+const Color primarycolor = Color(0xFF3B399A);
 const Color hintColor = Color(0xffCECECE);
 const Color labeltextColor = Color(0xff555555);
 const Color textTittleColor = Color(0xff333333);

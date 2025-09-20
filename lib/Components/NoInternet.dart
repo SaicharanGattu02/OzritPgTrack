@@ -46,7 +46,7 @@ class Nointernet extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset("assets/images/no_internet.png"),
+              Image.asset("images/images/no_internet.png"),
             ],
           ),
         ),
