@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import '../Presentation/AddHostler/AadharVerification.dart';
 import '../Presentation/AddHostler/AddHostlerDetails.dart';
 import '../Presentation/AddHostler/AddHostlerPic.dart';
 import '../Presentation/AddHostler/AddMobileNumber.dart';
+import '../Presentation/AddHostler/EmergencyDetails.dart';
+import '../Presentation/AddHostler/HostlerVerifyOtp.dart';
+import '../Presentation/AddHostler/RoomDetails.dart';
 import '../Presentation/Authentication/ForgotPassword.dart';
 import '../Presentation/Authentication/LogIn.dart';
 import '../Presentation/DashBoard.dart';
@@ -45,6 +49,30 @@ final GoRouter appRouter = GoRouter(
       path: '/add_mobile_number',
       pageBuilder: (context, state) {
         return buildSlideTransitionPage(AddMobileNumber(), state);
+      },
+    ),
+    GoRoute(
+      path: '/hostler_verify_otp',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(HostlerVerifyOtp(), state);
+      },
+    ),
+    GoRoute(
+      path: '/aadhar_verification',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(AadharVerification(), state);
+      },
+    ),
+    GoRoute(
+      path: '/emergency_details',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(EmergencyDetails(), state);
+      },
+    ),
+    GoRoute(
+      path: '/room_details',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(RoomDetails(), state);
       },
     ),
   ],

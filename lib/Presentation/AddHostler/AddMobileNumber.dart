@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ozritpgpaytrack/Components/CustomAppButton.dart';
+import 'package:ozritpgpaytrack/Components/CustomSnackBar.dart';
 import 'package:ozritpgpaytrack/Components/CutomAppBar.dart';
 import '../../Components/CommonTextFeild.dart';
 import '../../utils/media_query_helper.dart';
@@ -114,6 +117,7 @@ class _AddMobileNumberState extends State<AddMobileNumber> {
                       ],
                     ),
                   ),
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   label: "Mobile Number",
                   hint: "Enter 10-digit mobile number",
                   controller: mobileController,
@@ -124,24 +128,17 @@ class _AddMobileNumberState extends State<AddMobileNumber> {
           ),
         ),
       ),
-
-      // Bottom Button
       bottomNavigationBar: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 20),
           child: CustomAppButton1(
             text: "Next",
             onPlusTap: () {
-              // Validate mobile number
               final error = _validateMobile(mobileController.text);
               if (error != null) {
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text(error)));
-                return;
+                CustomSnackBar1.show(context, error);
               }
-              // Proceed to next step
-              // Navigator.push(...);
+              context.push("/hostler_verify_otp");
             },
           ),
         ),

@@ -54,48 +54,46 @@ class CommonTextField1 extends StatelessWidget {
               fontFamily: 'Roboto',
               fontWeight: labelFontWeight ?? FontWeight.w500,
               fontSize: labelFontSize ?? 14,
-              color: lableColor ?? Color(0xff1F2937),
+              color: lableColor ?? const Color(0xff1F2937),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
         ],
-        SizedBox(height: 48,
-          child: TextFormField(
-            readOnly: isRead,
-            inputFormatters: inputFormatters,
-            onTap: onTap,
-            style: const TextStyle(
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
-              color: Color(0xff111827),
+        TextFormField(
+          readOnly: isRead,
+          inputFormatters: inputFormatters,
+          onTap: onTap,
+          style: const TextStyle(
+            fontFamily: 'Roboto',
+            fontWeight: FontWeight.w500,
+            fontSize: 16,
+            color: Color(0xff111827),
+          ),
+          controller: controller,
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          maxLines: maxLines, // <-- lets field grow
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          onChanged: onChanged,
+          validator: validator,
+          decoration: InputDecoration(
+            hintText: hint,
+            hintStyle: const TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: Color(0xff9CA3AF),
             ),
-            controller: controller,
-            keyboardType: keyboardType,
-            obscureText: obscureText,
-            maxLines: maxLines,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            onChanged: onChanged,
-            validator: validator, // just return error msg here
-            decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: const TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-                color: Color(0xff9CA3AF),
-              ),
-              filled: true,
-              fillColor: color ?? Color(0xffffffff),
-              prefixIcon: prefixIcon,
-              suffixIcon: suffixIcon,
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 14,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
-              ),
+            filled: true,
+            fillColor: color ?? const Color(0xffffffff),
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 14,
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: BorderSide.none,
             ),
           ),
         ),
@@ -103,3 +101,4 @@ class CommonTextField1 extends StatelessWidget {
     );
   }
 }
+
