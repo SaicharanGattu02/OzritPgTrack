@@ -7,6 +7,7 @@ import '../../utils/color_constants.dart';
 import 'package:flutter/rendering.dart';
 import '../bloc/internet_status/internet_status_bloc.dart';
 import 'Home.dart';
+import 'Rooms.dart';
 
 class Dashboard extends StatefulWidget {
   final int? selectedIndex;
@@ -70,7 +71,7 @@ class _DashboardState extends State<Dashboard> {
               HapticFeedback.lightImpact();
               setState(() => _selectedIndex = i);
             },
-            children: [Home()],
+            children: [Home(),Rooms()],
           ),
           // ),
         ),
@@ -154,7 +155,7 @@ class _DashboardState extends State<Dashboard> {
             height: 24,
             color: _selectedIndex == 2 ? primarycolor : Color(0xff6B7280),
           ),
-          label: 'Calls',
+          label: 'Rooms',
         ),
         BottomNavigationBarItem(
           icon: Image.asset(

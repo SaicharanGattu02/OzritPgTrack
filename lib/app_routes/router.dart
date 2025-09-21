@@ -8,9 +8,8 @@ import '../Presentation/AddHostler/EmergencyDetails.dart';
 import '../Presentation/AddHostler/HostlerVerifyOtp.dart';
 import '../Presentation/AddHostler/RoomDetails.dart';
 import '../Presentation/Authentication/ForgotPassword.dart';
-import '../Presentation/Authentication/LogIn.dart';
+
 import '../Presentation/DashBoard.dart';
-import '../Presentation/splash.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
