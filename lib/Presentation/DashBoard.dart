@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ozritpgpaytrack/Presentation/HsotlersList.dart';
+import 'package:ozritpgpaytrack/Presentation/SelectHostel.dart';
 import '../../utils/color_constants.dart';
 import 'package:flutter/rendering.dart';
 import '../bloc/internet_status/internet_status_bloc.dart';
@@ -71,7 +73,7 @@ class _DashboardState extends State<Dashboard> {
               HapticFeedback.lightImpact();
               setState(() => _selectedIndex = i);
             },
-            children: [Home(),Rooms()],
+            children: [Home(), SelectHostel(), Rooms(), HostelersList()],
           ),
           // ),
         ),

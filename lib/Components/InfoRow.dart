@@ -3,29 +3,47 @@ import 'package:flutter/material.dart';
 class InfoRow extends StatelessWidget {
   final String label;
   final String value;
+  final FontWeight? labelFontWeight;
+  final FontWeight? valueFontWeight;
+  final double? labelFontSize;
+  final double? valueFontSize;
+  final Color? labelColor;
+  final Color? valueColor;
+  final double? labelWidth;
 
-  const InfoRow({Key? key, required this.label, required this.value})
-    : super(key: key);
+  const InfoRow({
+    Key? key,
+    required this.label,
+    required this.value,
+    this.labelFontWeight,
+    this.valueFontWeight,
+    this.labelFontSize,
+    this.valueFontSize,
+    this.labelColor,
+    this.valueColor,
+    this.labelWidth,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: Text(
             label,
-            style: const TextStyle(
-              color: Color(0xff6D6D6D),
-              fontWeight: FontWeight.w500,
+            style: TextStyle(
+              color: labelColor ?? Color(0xff6D6D6D),
+              fontWeight: labelFontWeight ?? FontWeight.w500,
               fontFamily: 'Roboto',
-              fontSize: 16,
+              fontSize: labelFontSize ?? 16,
             ),
           ),
         ),
-        const Text(
+        Text(
           ":",
-          style: const TextStyle(
+          style: TextStyle(
             color: Color(0xff6D6D6D),
             fontWeight: FontWeight.w500,
             fontFamily: 'Roboto',
@@ -37,13 +55,14 @@ class InfoRow extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Text(
               value,
+              textAlign: TextAlign.right,
               overflow: TextOverflow.ellipsis,
-              maxLines: 1,
-              style: const TextStyle(
-                color: Color(0xff333333),
-                fontWeight: FontWeight.w500,
+              maxLines: 5,
+              style: TextStyle(
+                color: valueColor ?? Color(0xff333333),
+                fontWeight: valueFontWeight ?? FontWeight.w500,
                 fontFamily: 'Roboto',
-                fontSize: 16,
+                fontSize: valueFontSize ?? 16,
               ),
             ),
           ),
@@ -52,65 +71,61 @@ class InfoRow extends StatelessWidget {
     );
   }
 }
-
 class InfoRow1 extends StatelessWidget {
   final String label;
   final String value;
-  final FontWeight? fontWeight;
-  final double? fontSize;
-  final double? labelwidth;
+  final FontWeight? labelFontWeight;
+  final FontWeight? valueFontWeight;
+  final double? labelFontSize;
+  final double? valueFontSize;
+  final Color? labelColor;
+  final Color? valueColor;
+  final double? labelWidth;
 
   const InfoRow1({
     Key? key,
     required this.label,
     required this.value,
-    this.fontWeight,
-    this.fontSize,
-    this.labelwidth,
+    this.labelFontWeight,
+    this.valueFontWeight,
+    this.labelFontSize,
+    this.valueFontSize,
+    this.labelColor,
+    this.valueColor,
+    this.labelWidth,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.sizeOf(context).width;
     return Row(
-      spacing: 10,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          width: labelwidth ?? width * 0.25,
+        Expanded(
           child: Text(
             label,
             style: TextStyle(
-              fontWeight: FontWeight.w500,
-              letterSpacing: 0,
-              fontSize: 16,
+              color: labelColor ?? Color(0xff6D6D6D),
+              fontWeight: labelFontWeight ?? FontWeight.w500,
+              fontFamily: 'Roboto',
+              fontSize: labelFontSize ?? 16,
             ),
           ),
         ),
-        Text(
-          ":",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w600,
-            letterSpacing: 0,
-            fontSize: 13,
-          ),
-        ),
-        SizedBox(width: 6),
+
         Expanded(
           child: Align(
-            alignment: Alignment.centerLeft,
+            alignment: Alignment.centerRight,
             child: Text(
-              textAlign: TextAlign.start,
               value,
+              textAlign: TextAlign.right,
               overflow: TextOverflow.ellipsis,
               maxLines: 5,
               style: TextStyle(
-                color: Color(0xff666666),
-                fontWeight: fontWeight ?? FontWeight.w500,
-                letterSpacing: 0,
-                fontSize: fontSize ?? 14,
+                color: valueColor ?? Color(0xff333333),
+                fontWeight: valueFontWeight ?? FontWeight.w500,
+                fontFamily: 'Roboto',
+                fontSize: valueFontSize ?? 16,
               ),
             ),
           ),

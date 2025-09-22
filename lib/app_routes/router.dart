@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ozritpgpaytrack/Presentation/Authentication/LogIn.dart';
+import 'package:ozritpgpaytrack/Presentation/HsotlersList.dart';
+import 'package:ozritpgpaytrack/Presentation/SelectHostel.dart';
+import 'package:ozritpgpaytrack/Presentation/splash.dart';
 import '../Presentation/AddHostler/AadharVerification.dart';
 import '../Presentation/AddHostler/AddHostlerDetails.dart';
 import '../Presentation/AddHostler/AddHostlerPic.dart';
@@ -10,6 +14,7 @@ import '../Presentation/AddHostler/RoomDetails.dart';
 import '../Presentation/Authentication/ForgotPassword.dart';
 
 import '../Presentation/DashBoard.dart';
+import '../Presentation/HostlerDetails.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -17,7 +22,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/',
       pageBuilder: (context, state) {
-        return buildSlideTransitionPage(Dashboard(), state);
+        return buildSlideTransitionPage(SplashScreen(), state);
       },
     ),
     GoRoute(
@@ -72,6 +77,30 @@ final GoRouter appRouter = GoRouter(
       path: '/room_details',
       pageBuilder: (context, state) {
         return buildSlideTransitionPage(RoomDetails(), state);
+      },
+    ),
+    GoRoute(
+      path: '/login',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(LogIn(), state);
+      },
+    ),
+    GoRoute(
+      path: '/hostler_details',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(HostlerDetails(), state);
+      },
+    ),
+    GoRoute(
+      path: '/select_hostel',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(SelectHostel(), state);
+      },
+    ),
+    GoRoute(
+      path: '/hostelers_list',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(HostelersList(), state);
       },
     ),
   ],

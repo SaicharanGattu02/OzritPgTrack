@@ -140,7 +140,8 @@ class _LogInState extends State<LogIn> with TickerProviderStateMixin {
                                           hint: "Full Name",
                                           controller: nameController,
                                           validator: (value) {
-                                            if (value == null || value.trim().isEmpty) {
+                                            if (value == null ||
+                                                value.trim().isEmpty) {
                                               return "Please enter full name";
                                             }
                                             if (value.trim().length < 3) {
@@ -183,7 +184,9 @@ class _LogInState extends State<LogIn> with TickerProviderStateMixin {
                                       child: TextButton(
                                         style: ButtonStyle(
                                           visualDensity: VisualDensity.compact,
-                                          padding: MaterialStateProperty.all(EdgeInsets.zero),
+                                          padding: MaterialStateProperty.all(
+                                            EdgeInsets.zero,
+                                          ),
                                         ),
                                         onPressed: () {
                                           context.push("/forgot_password");
@@ -242,7 +245,9 @@ class _LogInState extends State<LogIn> with TickerProviderStateMixin {
                                   color: Colors.white,
                                 ),
                                 iconSize: 28,
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.push("/select_hostel");
+                                },
                               ),
                             ),
                           ),
