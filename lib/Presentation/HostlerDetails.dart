@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ozritpgpaytrack/Components/CutomAppBar.dart';
 import 'package:ozritpgpaytrack/Components/InfoRow.dart';
 
@@ -579,45 +580,50 @@ class _HostlerDetailsState extends State<HostlerDetails> {
                                 ),
                               ),
                               SizedBox(height: 10),
-                              Container(
-                                padding: EdgeInsets.all(16),
-                                decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Color(0xFFFAF5FF),
-                                      Color(0xFFF3E8FF),
+                              GestureDetector(
+                                onTap: () {
+                                  context.push("/payment_history");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Color(0xFFFAF5FF),
+                                        Color(0xFFF3E8FF),
+                                      ],
+                                    ),
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        "assets/icons/payment_history.png",
+                                        width: 20,
+                                        height: 20,
+                                        fit: BoxFit.cover,
+                                        color: Color(0xff9333EA),
+                                      ),
+                                      SizedBox(width: 12),
+                                      Text(
+                                        "Payment History",
+                                        style: TextStyle(
+                                          color: Color(0xff7E22CE),
+                                          fontFamily: "Roboto",
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Icon(
+                                        Icons.keyboard_arrow_right,
+                                        size: 16,
+                                        color: Color(0xff9333EA),
+                                      ),
                                     ],
                                   ),
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      "assets/icons/payment_history.png",
-                                      width: 20,
-                                      height: 20,
-                                      fit: BoxFit.cover,
-                                      color: Color(0xff9333EA),
-                                    ),
-                                    SizedBox(width: 12),
-                                    Text(
-                                      "Payment History",
-                                      style: TextStyle(
-                                        color: Color(0xff7E22CE),
-                                        fontFamily: "Roboto",
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Spacer(),
-                                    Icon(
-                                      Icons.keyboard_arrow_right,
-                                      size: 16,
-                                      color: Color(0xff9333EA),
-                                    ),
-                                  ],
                                 ),
                               ),
                             ],

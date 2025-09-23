@@ -15,6 +15,7 @@ import '../Presentation/Authentication/ForgotPassword.dart';
 
 import '../Presentation/DashBoard.dart';
 import '../Presentation/HostlerDetails.dart';
+import '../Presentation/PaymentHistory.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -101,6 +102,12 @@ final GoRouter appRouter = GoRouter(
       path: '/hostelers_list',
       pageBuilder: (context, state) {
         return buildSlideTransitionPage(HostelersList(), state);
+      },
+    ),
+    GoRoute(
+      path: '/payment_history',
+      pageBuilder: (context, state) {
+        return buildSlideTransitionPage(PaymentHistory(), state);
       },
     ),
   ],
